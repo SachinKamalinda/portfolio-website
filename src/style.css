@@ -148,6 +148,33 @@ strong { color: var(--accent); font-weight: 600; }
   background: var(--accent-dim);
 }
 
+.about-cv-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.nav-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim2);
+  background: var(--accent-dim);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  white-space: nowrap;
+  margin-left: 0.5rem;
+}
+.nav-cv-btn:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -594,7 +621,7 @@ strong { color: var(--accent); font-weight: 600; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.4rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .project-card {
@@ -607,6 +634,7 @@ strong { color: var(--accent); font-weight: 600; }
   gap: 0.8rem;
   position: relative;
   overflow: hidden;
+  min-height: 420px;
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 /* Top accent line */
@@ -641,9 +669,13 @@ strong { color: var(--accent); font-weight: 600; }
   align-items: center;
   gap: 0.9rem;
 }
-.pc-folder {
-  font-size: 1.9rem;
-  color: var(--accent);
+.pc-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
 }
 .pc-links {
   display: flex;
@@ -878,6 +910,12 @@ strong { color: var(--accent); font-weight: 600; }
 /* ===================================================================
    CONTACT
    =================================================================== */
+.contact-intro {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -885,72 +923,163 @@ strong { color: var(--accent); font-weight: 600; }
   align-items: start;
 }
 
-.contact-text h3 {
-  font-size: 1.55rem;
+/* --- Left: info --- */
+.contact-info h3,
+.contact-form-wrap h3 {
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1rem;
 }
-.contact-text p {
+.contact-info > p {
   color: var(--text-secondary);
   line-height: 1.8;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
-.contact-cta { align-self: flex-start; }
 
-.contact-links {
+.ci-list {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
 }
-
-.contact-item {
+.ci-row {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.2rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  color: var(--text-secondary);
-  transition: var(--transition);
-}
-.contact-item:hover {
-  border-color: var(--accent-dim2);
-  color: var(--text-primary);
-  transform: translateX(5px);
-  box-shadow: var(--shadow-card);
 }
 .ci-icon {
-  width: 42px; height: 42px;
+  width: 44px; height: 44px;
   background: var(--accent-dim);
   border-radius: var(--radius);
   display: flex; align-items: center; justify-content: center;
   color: var(--accent);
   font-size: 1rem;
   flex-shrink: 0;
-  transition: var(--transition);
-}
-.contact-item:hover .ci-icon {
-  background: var(--accent);
-  color: var(--bg-primary);
-}
-.ci-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
 }
 .ci-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0.1rem;
 }
 .ci-value {
-  font-size: 0.9rem;
-  font-weight: 500;
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.contact-follow { }
+.follow-label {
+  display: block;
+  font-weight: 600;
   color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+.follow-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+.follow-icons a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+.follow-icons a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* --- Right: form --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.cf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.cf-field label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.cf-field input,
+.cf-field textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+.cf-field input::placeholder,
+.cf-field textarea::placeholder {
+  color: var(--text-muted, #555);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+.cf-field input:focus,
+.cf-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.btn-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+.btn-send:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.btn-send:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+  transform: none;
+}
+
+.contact-form-status {
+  min-height: 1.4rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.contact-form-status.is-success {
+  color: #4ade80;
+}
+
+.contact-form-status.is-error {
+  color: #f87171;
 }
 
 /* ===================================================================
@@ -1035,6 +1164,7 @@ strong { color: var(--accent); font-weight: 600; }
   .about-profile-img-wrap { width: 170px; }
   .about-profile-img { width: 170px; height: 170px; }
   .contact-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+  .cf-row        { grid-template-columns: 1fr; }
 }
 
 /* ===================================================================

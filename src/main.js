@@ -207,28 +207,68 @@ document.querySelectorAll('.tag').forEach(tag => {
 });
 
 
+
 /* ===================================================================
-   CONTACT ITEM — copy-to-clipboard on Ctrl+Click
+   CONTACT FORM — Google Apps Script / Google Sheets
+   Use the deployed Web App URL here, not the Apps Script editor URL.
    =================================================================== */
-document.querySelectorAll('.contact-item').forEach(item => {
-  item.addEventListener('click', async e => {
-    if (!e.ctrlKey && !e.metaKey) return;
+const CONTACT_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzL7DnOFcGPaZeA13_f5E9oiSX0rreCWd9vARhMpFJyip26A7bctb3Q4-MwdJBqCBca/exec';
+
+const contactForm = document.getElementById('contactForm');
+const contactFormStatus = document.getElementById('contactFormStatus');
+
+function setContactFormStatus(message, type = '') {
+  if (!contactFormStatus) return;
+
+  contactFormStatus.textContent = message;
+  contactFormStatus.classList.remove('is-success', 'is-error');
+
+  if (type) {
+    contactFormStatus.classList.add(type);
+  }
+}
+
+if (contactForm) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
 
-    const valueEl = item.querySelector('.ci-value');
-    if (!valueEl) return;
+    if (!CONTACT_FORM_ENDPOINT) {
+      setContactFormStatus('Contact form is not connected yet. Add your Apps Script Web App URL in src/main.js.', 'is-error');
+      return;
+    }
 
-    const text = valueEl.textContent.trim();
+    const formData = {
+      name: contactForm.querySelector('#cf-name')?.value.trim() || '',
+      email: contactForm.querySelector('#cf-email')?.value.trim() || '',
+      subject: contactForm.querySelector('#cf-subject')?.value.trim() || '',
+      message: contactForm.querySelector('#cf-message')?.value.trim() || '',
+      submittedAt: new Date().toISOString(),
+    };
+
+    submitButton.disabled = true;
+    setContactFormStatus('Sending message...');
+
     try {
-      await navigator.clipboard.writeText(text);
-      const original = valueEl.textContent;
-      valueEl.textContent = 'Copied!';
-      setTimeout(() => { valueEl.textContent = original; }, 1500);
-    } catch (_) {
-      // Clipboard API unavailable — silently ignore
+      await fetch(CONTACT_FORM_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      contactForm.reset();
+      setContactFormStatus('Message sent successfully.', 'is-success');
+    } catch (error) {
+      setContactFormStatus('Message failed to send. Please try again later.', 'is-error');
+    } finally {
+      submitButton.disabled = false;
     }
   });
-});
+}
 
 
 /* ===================================================================
