@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sachin Kamalinda – Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/src/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,7 +15,11 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="nav-logo">SK</a>
+      <a href="#home" class="nav-logo">
+        <span class="nav-logo-name">Sachin Kamalinda</span>
+        <span class="nav-logo-dot"> — </span>
+        <span class="nav-logo-sub">Portfolio</span>
+      </a>
       <div class="nav-menu" id="navMenu">
         <a href="#home"         class="nav-link active">Home</a>
         <a href="#about"        class="nav-link">About</a>
@@ -104,6 +108,10 @@
         </div>
 
         <div class="about-code-wrap reveal">
+          <div class="about-profile-img-wrap">
+            <img src="/images/propic.jpeg" alt="Sachin Kamalinda" class="about-profile-img" />
+            <div class="about-profile-ring"></div>
+          </div>
           <div class="code-card">
             <div class="code-card__header">
               <span class="dot dot--red"></span>
@@ -484,6 +492,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
