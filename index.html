@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sachin Kamalinda – Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">SK</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="#home"         class="nav-link active">Home</a>
+        <a href="#about"        class="nav-link">About</a>
+        <a href="#skills"       class="nav-link">Skills</a>
+        <a href="#projects"     class="nav-link">Projects</a>
+        <a href="#education"    class="nav-link">Education</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#contact"      class="nav-link">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow hero-glow--cyan"></div>
+    <div class="hero-glow hero-glow--blue"></div>
+
+    <div class="hero-content">
+      <p class="hero-greeting">Hi there, I'm</p>
+      <h1 class="hero-name">Sachin Kamalinda</h1>
+      <div class="hero-title-row">
+        <span class="hero-title-static">A&nbsp;</span>
+        <span class="typewriter" id="typewriter"></span>
+      </div>
+      <p class="hero-description">
+        A Computer Science undergraduate passionate about full-stack development
+        and building practical software solutions.
+      </p>
+      <p class="hero-location"><i class="fas fa-map-marker-alt"></i> Sri Lanka</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> View Projects</a>
+        <a href="#contact"  class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/SachinKamalinda" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="http://www.linkedin.com/in/sachin-kamalinda-489044237" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:sachinkamalinda@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="sec-num">01.</span>
+        <h2 class="sec-title">About Me</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a motivated Computer Science undergraduate currently studying
+            <strong>BSc (Hons) Computer Science</strong> at the University of Westminster,
+            facilitated by IIT Sri Lanka. I have a strong foundation in software
+            development with hands-on experience across the full stack.
+          </p>
+          <p>
+            My technical toolkit includes <strong>Java, JavaScript, Python, HTML, CSS,
+            React, Node.js, MySQL</strong> and <strong>MongoDB</strong>. I also have a solid
+            understanding of <strong>algorithms, machine learning</strong> and
+            <strong>data mining</strong>.
+          </p>
+          <p>
+            I'm passionate about building real-world software solutions that make a
+            difference, and I'm actively seeking opportunities to gain industry
+            experience and grow as a developer.
+          </p>
+          <div class="about-pills">
+            <span class="about-pill"><i class="fas fa-graduation-cap"></i> BSc CS @ UoW / IIT</span>
+            <span class="about-pill"><i class="fas fa-code"></i> Full-Stack Developer</span>
+            <span class="about-pill"><i class="fas fa-brain"></i> ML &amp; Data Mining</span>
+            <span class="about-pill"><i class="fas fa-map-marker-alt"></i> Sri Lanka</span>
+          </div>
+        </div>
+
+        <div class="about-code-wrap reveal">
+          <div class="code-card">
+            <div class="code-card__header">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+              <span class="code-card__file">about.js</span>
+            </div>
+            <pre class="code-card__body"><code><span class="ck">const</span> <span class="cv">sachin</span> = {
+  <span class="cp">name</span>:      <span class="cs">"Sachin Kamalinda"</span>,
+  <span class="cp">role</span>:      <span class="cs">"Full-Stack Developer"</span>,
+  <span class="cp">degree</span>:    <span class="cs">"BSc CS @ UoW / IIT"</span>,
+  <span class="cp">location</span>: <span class="cs">"Sri Lanka 🇱🇰"</span>,
+  <span class="cp">stack</span>: [
+    <span class="cs">"JavaScript"</span>, <span class="cs">"Python"</span>,
+    <span class="cs">"React"</span>, <span class="cs">"Node.js"</span>,
+    <span class="cs">"MySQL"</span>, <span class="cs">"MongoDB"</span>
+  ],
+  <span class="cp">interests</span>: [
+    <span class="cs">"Full-Stack Dev"</span>,
+    <span class="cs">"Machine Learning"</span>,
+    <span class="cs">"Open Source"</span>
+  ],
+  <span class="cp">available</span>: <span class="ck">true</span>
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section section--alt" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="sec-num">02.</span>
+        <h2 class="sec-title">Skills</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-card__icon"><i class="fas fa-code"></i></div>
+          <h3>Languages</h3>
+          <div class="tag-list">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Frameworks / Libraries</h3>
+          <div class="tag-list">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">Electron</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon"><i class="fas fa-database"></i></div>
+          <h3>Databases</h3>
+          <div class="tag-list">
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon"><i class="fas fa-tools"></i></div>
+          <h3>Tools</h3>
+          <div class="tag-list">
+            <span class="tag">Git</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Google Colab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="sec-num">03.</span>
+        <h2 class="sec-title">Projects</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Recruita -->
+        <div class="project-card project-card--featured reveal">
+          <div class="project-card__top">
+            <div class="project-card__icons">
+              <i class="fas fa-folder-open pc-folder"></i>
+              <div class="pc-links">
+                <a href="https://github.com/Thenuja-Hansana/Reqruita-CS80" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <span class="pc-badge">Featured</span>
+          </div>
+          <h3 class="pc-title">Recruita – AI Interview Platform</h3>
+          <p class="pc-desc">
+            An AI-driven platform for secure online interviews with intelligent monitoring
+            and lockdown environment. Includes scheduling, automated emails, decision
+            tagging and candidate management tools.
+          </p>
+          <p class="pc-role"><i class="fas fa-user-tag"></i> Role: <strong>Front-End Developer</strong></p>
+          <div class="tag-list pc-tech">
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">CSS</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Electron</span>
+          </div>
+        </div>
+
+        <!-- Chat App -->
+        <div class="project-card reveal">
+          <div class="project-card__top">
+            <div class="project-card__icons">
+              <i class="fas fa-folder-open pc-folder"></i>
+              <div class="pc-links">
+                <a href="https://github.com/SachinKamalinda/chat-app" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="pc-title">Full Stack Chat Application</h3>
+          <p class="pc-desc">
+            Real-time chat application with secure authentication, instant messaging,
+            and chat history storage.
+          </p>
+          <div class="tag-list pc-tech">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Socket.io</span>
+          </div>
+        </div>
+
+        <!-- Flight Route Finder -->
+        <div class="project-card reveal">
+          <div class="project-card__top">
+            <div class="project-card__icons">
+              <i class="fas fa-folder-open pc-folder"></i>
+              <div class="pc-links">
+                <a href="https://github.com/SachinKamalinda/flight-route-finder" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="pc-title">Flight Route Finder</h3>
+          <p class="pc-desc">
+            Python program that finds all airline routes between two countries using
+            graph-based algorithms.
+          </p>
+          <div class="tag-list pc-tech">
+            <span class="tag">Python</span>
+          </div>
+        </div>
+
+        <!-- Tic Tac Toe -->
+        <div class="project-card reveal">
+          <div class="project-card__top">
+            <div class="project-card__icons">
+              <i class="fas fa-folder-open pc-folder"></i>
+              <div class="pc-links">
+                <a href="https://github.com/SachinKamalinda/tic_tac_toe" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="pc-title">Tic Tac Toe Game</h3>
+          <p class="pc-desc">
+            Command-line Python game for two players with session statistics tracking.
+          </p>
+          <div class="tag-list pc-tech">
+            <span class="tag">Python</span>
+          </div>
+        </div>
+
+        <!-- Traffic Data View -->
+        <div class="project-card reveal">
+          <div class="project-card__top">
+            <div class="project-card__icons">
+              <i class="fas fa-folder-open pc-folder"></i>
+              <div class="pc-links">
+                <a href="https://github.com/SachinKamalinda/Traffic_Data_View-Python" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="pc-title">Traffic Data View</h3>
+          <p class="pc-desc">
+            Python program that processes traffic CSV data, calculates statistics and
+            visualizes traffic patterns using Tkinter.
+          </p>
+          <div class="tag-list pc-tech">
+            <span class="tag">Python</span>
+            <span class="tag">Tkinter</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section section--alt" id="education">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="sec-num">04.</span>
+        <h2 class="sec-title">Education</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2024 – Present</span>
+            <h3>BSc (Hons) Computer Science</h3>
+            <p>University of Westminster – IIT Sri Lanka</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2024</span>
+            <h3>Foundation Certificate in Higher Education</h3>
+            <p>IIT Sri Lanka</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">Advanced Level</span>
+            <h3>Physical Science Stream</h3>
+            <p>St. Aloysius College, Galle</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATES ===== -->
+  <section class="section" id="certificates">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="sec-num">05.</span>
+        <h2 class="sec-title">Certificates</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="certs-grid">
+        <div class="cert-card reveal">
+          <div class="cert-card__icon"><i class="fas fa-certificate"></i></div>
+          <div class="cert-card__info">
+            <h3>NumPy for Data Science &amp; Machine Learning</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> Udemy</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-card__icon"><i class="fas fa-award"></i></div>
+          <div class="cert-card__info">
+            <h3>Webspire 2.0 Workshop</h3>
+            <p class="cert-issuer"><i class="fas fa-building"></i> IEEE IIT</p>
+            <p class="cert-sub">"The Art of JavaScript &amp; Frameworks"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOFT SKILLS ===== -->
+  <section class="section section--alt" id="softskills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="sec-num">06.</span>
+        <h2 class="sec-title">Soft Skills</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="soft-grid">
+        <div class="soft-item reveal">
+          <div class="soft-item__icon"><i class="fas fa-comments"></i></div>
+          <span>Effective Communication</span>
+        </div>
+        <div class="soft-item reveal">
+          <div class="soft-item__icon"><i class="fas fa-sync-alt"></i></div>
+          <span>Adaptability</span>
+        </div>
+        <div class="soft-item reveal">
+          <div class="soft-item__icon"><i class="fas fa-users"></i></div>
+          <span>Teamwork</span>
+        </div>
+        <div class="soft-item reveal">
+          <div class="soft-item__icon"><i class="fas fa-star"></i></div>
+          <span>Leadership</span>
+        </div>
+        <div class="soft-item reveal">
+          <div class="soft-item__icon"><i class="fas fa-expand-arrows-alt"></i></div>
+          <span>Flexibility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="sec-num">07.</span>
+        <h2 class="sec-title">Contact</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-text reveal">
+          <h3>Let's Work Together</h3>
+          <p>
+            I'm currently open to new opportunities and collaborations. Whether you
+            have a project in mind, a job offer, or just want to say hello — feel
+            free to reach out!
+          </p>
+          <a href="mailto:sachinkamalinda@gmail.com" class="btn btn-primary contact-cta">
+            <i class="fas fa-paper-plane"></i> Say Hello
+          </a>
+        </div>
+
+        <div class="contact-links reveal">
+          <a href="tel:+94772195345" class="contact-item">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div class="ci-info">
+              <span class="ci-label">Phone</span>
+              <span class="ci-value">+94 77 219 5345</span>
+            </div>
+          </a>
+
+          <a href="mailto:sachinkamalinda@gmail.com" class="contact-item">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div class="ci-info">
+              <span class="ci-label">Email</span>
+              <span class="ci-value">sachinkamalinda@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/SachinKamalinda" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <div class="ci-icon"><i class="fab fa-github"></i></div>
+            <div class="ci-info">
+              <span class="ci-label">GitHub</span>
+              <span class="ci-value">SachinKamalinda</span>
+            </div>
+          </a>
+
+          <a href="http://www.linkedin.com/in/sachin-kamalinda-489044237" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <div class="ci-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="ci-info">
+              <span class="ci-label">LinkedIn</span>
+              <span class="ci-value">sachin-kamalinda</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed &amp; Built by <span class="accent">Sachin Kamalinda</span></p>
+      <p class="footer-sub">&copy; 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
