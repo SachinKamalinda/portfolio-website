@@ -212,7 +212,7 @@ document.querySelectorAll('.tag').forEach(tag => {
    CONTACT FORM — Google Apps Script / Google Sheets
    Use the deployed Web App URL here, not the Apps Script editor URL.
    =================================================================== */
-const CONTACT_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzL7DnOFcGPaZeA13_f5E9oiSX0rreCWd9vARhMpFJyip26A7bctb3Q4-MwdJBqCBca/exec';
+const CONTACT_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyv7APKxQoT2hhr2-0rftDxP7KqpudNV_12zM9tRGZWkYxH_YH5tZ2YBRBkVpIn64wH/exec';
 
 const contactForm = document.getElementById('contactForm');
 const contactFormStatus = document.getElementById('contactFormStatus');
