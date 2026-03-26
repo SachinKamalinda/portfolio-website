@@ -308,33 +308,44 @@ document.querySelectorAll('section[id]').forEach(s => titleObserver.observe(s));
 function handleCVDownload(e) {
   e.preventDefault();
   
-  const cvUrl = '/SachinKamalinda.pdf';
   const fileName = 'SachinKamalinda.pdf';
+  // Try multiple path variations
+  const cvUrls = [
+    '/SachinKamalinda.pdf',
+    './public/SachinKamalinda.pdf',
+    '/public/SachinKamalinda.pdf',
+  ];
   
-  // Fetch the PDF file
-  fetch(cvUrl)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to fetch CV');
+  async function tryDownload(urls) {
+    for (const cvUrl of urls) {
+      try {
+        const response = await fetch(cvUrl);
+        if (response.ok) {
+          const blob = await response.blob();
+          // Create a blob URL and download
+          const blobUrl = window.URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = blobUrl;
+          link.download = fileName;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(blobUrl);
+          console.log('CV downloaded from:', cvUrl);
+          return;
+        }
+      } catch (error) {
+        console.log(`Failed to fetch from ${cvUrl}:`, error.message);
+        continue;
       }
-      return response.blob();
-    })
-    .then(blob => {
-      // Create a blob URL and download
-      const blobUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(blobUrl);
-    })
-    .catch(error => {
-      console.error('CV download error:', error);
-      // Fallback to direct link
-      window.open(cvUrl, '_blank');
-    });
+    }
+    
+    // If all paths fail, fall back to opening in browser
+    console.error('Could not download CV from any path. Opening in browser.');
+    window.open(cvUrls[0], '_blank');
+  }
+  
+  tryDownload(cvUrls);
 }
 
 // Attach click handlers to all CV download buttons
