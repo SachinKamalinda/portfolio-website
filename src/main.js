@@ -300,3 +300,44 @@ const titleObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll('section[id]').forEach(s => titleObserver.observe(s));
+
+
+/* ===================================================================
+   CV DOWNLOAD HANDLER
+   =================================================================== */
+function handleCVDownload(e) {
+  e.preventDefault();
+  
+  const cvUrl = '/SachinKamalinda.pdf';
+  const fileName = 'SachinKamalinda.pdf';
+  
+  // Fetch the PDF file
+  fetch(cvUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch CV');
+      }
+      return response.blob();
+    })
+    .then(blob => {
+      // Create a blob URL and download
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    })
+    .catch(error => {
+      console.error('CV download error:', error);
+      // Fallback to direct link
+      window.open(cvUrl, '_blank');
+    });
+}
+
+// Attach click handlers to all CV download buttons
+document.querySelectorAll('a[href="/SachinKamalinda.pdf"]').forEach(link => {
+  link.addEventListener('click', handleCVDownload);
+});
